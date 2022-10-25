@@ -1,0 +1,127 @@
+export interface Schedule {
+    id:       number;
+    url:      string;
+    name:     string;
+    season:   number;
+    number:   number | null;
+    type:     Type;
+    airdate:  Date;
+    airtime:  string;
+    airstamp: Date;
+    runtime:  number | null;
+    rating:   Rating;
+    image:    null;
+    summary:  null | string;
+    show:     Show;
+    _links:   ScheduleLinks;
+}
+
+export interface ScheduleLinks {
+    self: Self;
+}
+
+export interface Self {
+    href: string;
+}
+
+export interface Rating {
+    average: number | null;
+}
+
+export interface Show {
+    id:             number;
+    url:            string;
+    name:           string;
+    type:           string;
+    language:       Language;
+    genres:         string[];
+    status:         Status;
+    runtime:        number | null;
+    averageRuntime: number | null;
+    premiered:      Date;
+    ended:          null;
+    officialSite:   null | string;
+    schedule:       ScheduleClass;
+    rating:         Rating;
+    weight:         number;
+    network:        Network | null;
+    webChannel:     Network | null;
+    dvdCountry:     null;
+    externals:      Externals;
+    image:          Image;
+    summary:        string;
+    updated:        number;
+    _links:         ShowLinks;
+}
+
+export interface ShowLinks {
+    self:            Self;
+    previousepisode: Self;
+    nextepisode:     Self;
+}
+
+export interface Externals {
+    tvrage:  number | null;
+    thetvdb: number | null;
+    imdb:    null | string;
+}
+
+export interface Image {
+    medium:   string;
+    original: string;
+}
+
+export enum Language {
+    English = "English",
+}
+
+export interface Network {
+    id:           number;
+    name:         string;
+    country:      Country;
+    officialSite: null | string;
+}
+
+export interface Country {
+    name:     Name;
+    code:     Code;
+    timezone: Timezone;
+}
+
+export enum Code {
+    Us = "US",
+}
+
+export enum Name {
+    UnitedStates = "United States",
+}
+
+export enum Timezone {
+    AmericaNewYork = "America/New_York",
+}
+
+export interface ScheduleClass {
+    time: string;
+    days: Day[];
+}
+
+export enum Day {
+    Friday = "Friday",
+    Monday = "Monday",
+    Saturday = "Saturday",
+    Sunday = "Sunday",
+    Thursday = "Thursday",
+    Tuesday = "Tuesday",
+    Wednesday = "Wednesday",
+}
+
+export enum Status {
+    Running = "Running",
+}
+
+export enum Type {
+    Regular = "regular",
+    SignificantSpecial = "significant_special",
+}
+
+
