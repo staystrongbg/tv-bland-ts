@@ -30,7 +30,9 @@ const MovieCard: React.FC<{ data: Schedule }> = ({ data }) => {
           />
           <span className={styles.showRating}>{data.show.rating.average}</span>
         </div>
-        <h3>{data.name}</h3>
+        <h3>
+          {data.name.length > 40 ? data.name.slice(0, 39) + '...' : data.name}
+        </h3>
         <p>Runtime: {data.runtime} min</p>
         <p>Airdate: {data.airtime}</p>
       </div>
