@@ -11,9 +11,6 @@ const Hero: React.FC = () => {
           layout='fill'
           objectFit='cover'
           alt='popcorn'
-          placeholder='blur'
-          blurDataURL={Popcorn}
-          loading='lazy'
         />
       </div>
       <div className={styles.nowPlaying}>
