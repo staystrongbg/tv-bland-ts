@@ -31,13 +31,13 @@ const Movie: React.FC<{ data: Show }> = ({ data }) => {
         <div className={styles.movie}>
           <div className={styles.image}>
             <Image
-              src={data.image.original}
+              src={data?.image.original}
               alt=''
               width={400}
               height={600}
               objectFit='cover'
               placeholder='blur'
-              blurDataURL={data.image.original}
+              blurDataURL={data?.image.original}
               loading='lazy'
             />
           </div>
@@ -47,7 +47,7 @@ const Movie: React.FC<{ data: Show }> = ({ data }) => {
                 allowFraction
                 readonly
                 size={18}
-                initialValue={data.rating?.average / 2}
+                initialValue={data?.rating.average / 2}
               />
               <span>{data.rating.average}</span>
             </div>
@@ -62,7 +62,7 @@ const Movie: React.FC<{ data: Show }> = ({ data }) => {
             <div className={styles.info}>
               <div className={styles.days}>
                 <p>Schedule: </p>
-                {data.schedule.days.map((day) => (
+                {data?.schedule?.days.map((day) => (
                   <p key={day}> {day}</p>
                 ))}
               </div>
@@ -72,11 +72,11 @@ const Movie: React.FC<{ data: Show }> = ({ data }) => {
               </div>
               <div className={styles.status}>
                 <p>network: </p>
-                <p>{data.network?.name}</p>
+                <p>{data?.network?.name}</p>
               </div>
               <div className={styles.genres}>
                 <p>genres: </p>
-                {data.genres.map((g) => (
+                {data?.genres.map((g) => (
                   <p key={g}> {g}</p>
                 ))}
               </div>
@@ -87,7 +87,7 @@ const Movie: React.FC<{ data: Show }> = ({ data }) => {
             <div className={styles.info}>
               <div className={styles.days}>
                 <p>Schedule: </p>
-                {data.schedule.days.map((day) => (
+                {data?.schedule?.days.map((day) => (
                   <p key={day}> {day}</p>
                 ))}
               </div>
@@ -97,11 +97,11 @@ const Movie: React.FC<{ data: Show }> = ({ data }) => {
               </div>
               <div className={styles.status}>
                 <p>network: </p>
-                <p>{data.network.name}</p>
+                <p>{data?.network.name}</p>
               </div>
               <div className={styles.genres}>
                 <p>genres: </p>
-                {data.genres.map((g) => (
+                {data?.genres.map((g) => (
                   <p key={g}> {g}</p>
                 ))}
               </div>
